@@ -9,12 +9,17 @@ jobs:
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
+      - name: 📦 Setup bun
+        uses: oven-sh/setup-bun@v1
+      - name: 🏗️ Build
+        run: bun run build
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
           # Remote directory
           server-dir: ./www/testing-folder/
           security: strict

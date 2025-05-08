@@ -16,4 +16,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           # Remote directory
-          server-dir: ./www/testing-folder
+          server-dir: ./www/testing-folder/

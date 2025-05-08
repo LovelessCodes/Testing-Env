@@ -1,18 +1,28 @@
 import { useLocation } from 'preact-iso';
+import { cn } from '../lib/utils';
+import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from './ui/navigation-menu';
 
 export function Header() {
-	const { url } = useLocation();
+	const { path } = useLocation();
 
 	return (
-		<header>
-			<nav>
-				<a href="/" class={url == '/' && 'active'}>
-					Home
-				</a>
-				<a href="/404" class={url == '/404' && 'active'}>
-					404
-				</a>
-			</nav>
-		</header>
+		<NavigationMenu className="px-12">
+			<NavigationMenuList>
+				<NavigationMenuItem>
+					<a href="/">
+						<NavigationMenuLink>
+							Home
+						</NavigationMenuLink>
+					</a>
+				</NavigationMenuItem>
+				<NavigationMenuItem>
+					<a href="/404">
+						<NavigationMenuLink>
+							404
+						</NavigationMenuLink>
+					</a>
+				</NavigationMenuItem>
+			</NavigationMenuList>
+		</NavigationMenu>
 	);
 }

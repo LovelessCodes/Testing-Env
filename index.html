@@ -10,5 +10,17 @@
 	<body>
 		<div id="app"></div>
 		<script prerender type="module" src="/src/index.tsx"></script>
+		<script prerender>
+			// Load theme from localStorage or use system preference
+			const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+			document.documentElement.classList.add(theme);
+			
+			// Add event listener to toggle theme
+			window.addEventListener('storage', () => {
+				const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+				document.documentElement.classList.remove('dark', 'light');
+				document.documentElement.classList.add(theme);
+			});
+		</script>
 	</body>
 </html>

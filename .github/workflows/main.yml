@@ -17,5 +17,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           # Remote directory
           server-dir: ./www/testing-folder/
-          security: ftps
+          security: strict
           port: 21

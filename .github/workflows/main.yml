@@ -1,0 +1,20 @@
+name: Github Actions to FTP
+on:
+  push:
+    branches: ['main']
+jobs:
+  FTP-Deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: FTP Deploy Action via lftp (FTP, SFTP, FTPS)
+        uses: pontago/lftp-deploy-action@v1.0.1
+        with:
+          # Sever Hostname or IP
+          host: ${{ secrets.FTP_HOST }}
+          # Login Username
+          username: ${{ secrets.FTP_USERNAME }}
+          # Login Password
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Upload remote directory.
+          remote_dir: /test
+          

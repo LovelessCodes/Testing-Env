@@ -18,4 +18,4 @@ jobs:
           # FTP password
           password: ${{ secrets.FTP_PASSWORD }}
           # Remote directory
-          remoteDir: ./test
+          remoteDir: ./www/testing

@@ -6,15 +6,16 @@ jobs:
   FTP-Deployment:
     runs-on: ubuntu-latest
     steps:
-      - name: FTP Deploy Action via lftp (FTP, SFTP, FTPS)
-        uses: pontago/lftp-deploy-action@v1.0.1
+      - name: ftp-action
+        # You may pin to the exact commit or the version.
+        # uses: sebastianpopp/ftp-action@eb75c5cb29d23ee4a729720a27dfb66403cb0f6d
+        uses: sebastianpopp/ftp-action@v2.0.0
         with:
-          # Sever Hostname or IP
+          # FTP host
           host: ${{ secrets.FTP_HOST }}
-          # Login Username
-          username: ${{ secrets.FTP_USERNAME }}
-          # Login Password
+          # FTP user
+          user: ${{ secrets.FTP_USERNAME }}
+          # FTP password
           password: ${{ secrets.FTP_PASSWORD }}
-          # Upload remote directory.
-          remote_dir: /test
-          
+          # Remote directory
+          remoteDir: ./test

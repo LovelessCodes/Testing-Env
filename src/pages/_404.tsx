@@ -59,7 +59,7 @@ export function NotFound() {
 	};
 
 	return (
-		<div className="min-h-screen bg-gradient-to-b from-indigo-50 dark:from-indigo-900 to-background text-text flex items-center justify-center px-6 py-16">
+		<div className="bg-gradient-to-b from-indigo-50 dark:from-indigo-900 to-background text-text flex items-center justify-center px-6 py-16">
 			<motion.div 
 				className="max-w-md w-full text-center"
 				initial="hidden"

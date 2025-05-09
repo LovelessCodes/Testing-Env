@@ -172,7 +172,7 @@ export function Home() {
 	}, [featuresInView, testimonialInView, ctaInView, featuresControls, testimonialControls, ctaControls]);
 
 	return (
-		<div class="min-h-screen bg-gradient-to-b from-indigo-50 dark:from-indigo-950 to-background text-text">
+		<div class="flex flex-col bg-gradient-to-b from-indigo-50 dark:from-indigo-950 to-background text-text">
 			{/* Hero Section */}
 			<motion.section 
 				ref={heroRef} 

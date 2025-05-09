@@ -9,14 +9,14 @@ export function Header() {
 		<NavigationMenu className="px-12">
 			<NavigationMenuList>
 				<NavigationMenuItem>
-					<a href="/">
+					<a href="/testing">
 						<NavigationMenuLink>
 							Home
 						</NavigationMenuLink>
 					</a>
 				</NavigationMenuItem>
 				<NavigationMenuItem>
-					<a href="/404">
+					<a href="/testing/404">
 						<NavigationMenuLink>
 							404
 						</NavigationMenuLink>

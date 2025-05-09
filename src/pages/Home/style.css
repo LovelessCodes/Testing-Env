@@ -1,47 +1,52 @@
-img {
-	margin-bottom: 1.5rem;
+/* Animation classes for the homepage */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
 }
 
-img:hover {
-	filter: drop-shadow(0 0 2em #673ab8aa);
+.animate-scale-in {
+  animation: scaleIn 0.8s ease forwards;
+  opacity: 0;
+  transform: scale(0.95);
 }
 
-.home section {
-	margin-top: 5rem;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	column-gap: 1.5rem;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.resource {
-	padding: 0.75rem 1.5rem;
-	border-radius: 0.5rem;
-	text-align: left;
-	text-decoration: none;
-	color: #222;
-	background-color: #f1f1f1;
-	border: 1px solid transparent;
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.resource:hover {
-	border: 1px solid #000;
-	box-shadow: 0 25px 50px -12px #673ab888;
+/* Additional styles for the homepage */
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (max-width: 639px) {
-	.home section {
-		margin-top: 5rem;
-		grid-template-columns: 1fr;
-		row-gap: 1rem;
-	}
+.feature-card:hover {
+  transform: translateY(-5px);
 }
 
-@media (prefers-color-scheme: dark) {
-	.resource {
-		color: #ccc;
-		background-color: #161616;
-	}
-	.resource:hover {
-		border: 1px solid #bbb;
-	}
+/* Initially hide elements that will be animated */
+.hero-section h1,
+.hero-section p,
+.hero-section .hero-buttons,
+.feature-card,
+.testimonial-section,
+.cta-section {
+  opacity: 0;
 }

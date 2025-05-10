@@ -6,6 +6,7 @@ import { useState } from 'preact/hooks';
 
 export function Header() {
 	const { path } = useLocation();
+
 	// State for mobile menu
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -17,9 +18,7 @@ export function Header() {
 	// Navigation items
 	const navItems = [
 		{ label: 'Home', href: '/testing/' },
-		{ label: 'About', href: '/testing/about' },
-		{ label: 'Projects', href: '/testing/projects' },
-		{ label: 'Contact', href: '/testing/contact' },
+		{ label: '404', href: '/testing/404' },
 	];
 
 	// Animation variants
@@ -64,8 +63,8 @@ export function Header() {
 
 				{/* Navigation */}
 				<nav className="hidden md:flex gap-6">
-					{navItems.map((item, index) => {
-						const isActive = path === item.href;
+					{navItems.map(item => {
+						const isActive = path === (item.href.endsWith("/") ? item.href.slice(0, -1) : item.href);
 						return (
 							<motion.div
 								key={item.href}

@@ -9,7 +9,7 @@ export function App() {
 	return (
 		<LocationProvider scope="/testing">
 			<Header />
-			<main>
+			<main className="flex items-center justify-center">
 				<Router>
 					<Route path="/testing/" component={Home} />
 					<Route default component={NotFound} />
